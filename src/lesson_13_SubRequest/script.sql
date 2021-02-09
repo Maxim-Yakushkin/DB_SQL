@@ -45,6 +45,7 @@ SELECT e.first_name || ' ' || e.last_name                                  full_
        (SELECT max(em.salary) FROM company_storage.employee em) - e.salary diff_salary
 FROM company_storage.employee e;
 
+-- Выборака из employee у которых company_id с датой основания в заданном временном периоде
 SELECT *
 FROM company_storage.employee e
 WHERE e.company_id IN (SELECT com.id
