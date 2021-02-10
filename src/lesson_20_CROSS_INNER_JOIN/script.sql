@@ -98,11 +98,11 @@ FROM employee,
 WHERE employee.company_id = company.id;
 
 -- КРУТО
-SELECT c.name,
-       employee.first_name || ' ' || employee.last_name full_name,
+SELECT employee.first_name || ' ' || employee.last_name full_name,
+       c.name                                           company,
        ec.contact_id,
        ct.number,
-       ct.type
+       ct.type                                          number_type
 FROM employee
          JOIN company c
               ON employee.company_id = c.id
